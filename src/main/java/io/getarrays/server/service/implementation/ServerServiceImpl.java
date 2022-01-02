@@ -4,6 +4,7 @@ import io.getarrays.server.enumeration.Status;
 import io.getarrays.server.model.Server;
 import io.getarrays.server.repository.ServerRepository;
 import io.getarrays.server.service.ServerService;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -73,7 +74,7 @@ public class ServerServiceImpl implements ServerService {
     }
 
     private String setServerImageUrl() {
-        String[] imageNames = {"server-image-1", "server-image-2", "server-image-3", "server-image-4"};
-        return ServletUriComponentsBuilder.fromCurrentContextPath().path("/server/image/" + imageNames[new Random().nextInt(4)]).toUriString(); //making sure the random number doesn't exceed 4 inside of the index
+        String[] imageNames = {"server1.png", "server2.png", "server3.png", "server4.png"};
+        return ServletUriComponentsBuilder.fromCurrentContextPath().path("server/image/" + imageNames[new Random().nextInt(4)]).toUriString(); //making sure the random number doesn't exceed 4 inside of the index
     }
 }
